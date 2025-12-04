@@ -1,0 +1,25 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["post"],
+      "route": "validate"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "inputblob",
+      "path": "sales-files/{fileName}",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
